@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/20 07:44:08 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/04 05:54:57 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/04 06:05:36 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_condition2(char *str, t_env *e)
 	int i;
 	int	k;
 
-	i = (e->condi == '%') ? -1 : 0;
+	i = (e->condi == '%') ? 1 : 0;
 	k = 0;
 	if ((e->size_num = ft_precision(str, e)) < 0)
 		e->error = 1;
