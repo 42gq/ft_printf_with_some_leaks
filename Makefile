@@ -6,7 +6,7 @@
 #    By: gquerre <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/03 05:42:43 by gquerre           #+#    #+#              #
-#    Updated: 2017/10/02 00:49:06 by gquerre          ###   ########.fr        #
+#    Updated: 2017/10/04 05:12:51 by gquerre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,6 @@ FLAG = -Wextra -Wall -Werror
 SUPP = ./ft_printf.h ./SRC/libft/SRC/libft.h
 
 OBJ = ./*.o
-
-# -fsanitize=address after -c #
 
 all: $(NAME)
 
