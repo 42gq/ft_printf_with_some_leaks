@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 08:14:38 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/04 02:05:12 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/04 05:04:58 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_signs(char *str, t_env *e)
 		if (str[i] == ' ')
 			e->space += 1;
 		if (str[i] == '0')
-			e->null += 1;
+			e->null = 1;
 		if (str[i] == '#')
 			e->diese += 1;
 		if (str[i] == '-')
