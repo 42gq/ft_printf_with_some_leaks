@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/27 06:18:27 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/04 06:06:36 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/04 06:10:11 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int		ft_percent(t_env *e)
 		return (-1);
 	add[0] = '%';
 	add[1] = '\0';
+	e->size += 1;
 	if (!(e->stock = ft_strjoinfree(e->stock, add)))
 		return (-1);
 	return (2);
