@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/28 06:17:32 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/04 03:44:31 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/04 05:27:01 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_handle_wchar(wint_t v_arg, t_env *e)
 		ft_strclr(add);
 	mem = ft_apply_optionschar(add, e);
 	ft_strclr(add);
-	e->size += (chr) ? ft_strlen(mem) : ft_strlen(mem) + 1;
+	e->size += (chr) ? ft_strlen(mem) : ft_strlen(mem);
 	if (!(e->stock = ft_strjoinfree(e->stock, mem)))
 		return (-1);
 	return (1);

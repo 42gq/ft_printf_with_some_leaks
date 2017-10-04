@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/29 05:00:18 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/04 04:24:40 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/04 05:25:34 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,10 @@ char	*ft_conv_wint_to_str(wint_t c, t_env *e)
 	str = NULL;
 	res = NULL;
 	if (c == '\0')
+	{
 		res = ft_strdup("\0");
+		e->size_w += 1;
+	}
 	else if ((i = ft_convert_deci_to_binary(c, 1, e)))
 	{
 		str = ft_split_mbytes(e, i);
