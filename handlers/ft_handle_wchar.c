@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/28 06:17:32 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/04 05:29:33 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/05 07:25:32 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ int	ft_handle_wchar(wint_t v_arg, t_env *e)
 	mem = NULL;
 	add = NULL;
 	chr = v_arg;
-	add = ft_conv_wint_to_str(chr, e);
+	if (chr > 128 && chr < 255)
+		return (ft_handle_char((char)v_arg, e));
+	else
+		add = ft_conv_wint_to_str(chr, e);
 	if (e->preci_size && e->size_w > e->preci)
 		ft_strclr(add);
 	mem = ft_apply_optionschar(add, e);
