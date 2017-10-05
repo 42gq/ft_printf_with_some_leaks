@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 07:23:59 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/05 05:53:39 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/05 05:56:40 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int		ft_check_preci(char *str, t_env *e)
 		i--;
 	if (!(k = ft_options_field(str, i, e)))
 	{
-
 		if ((str[i] == '.') && e->preci == 0)
 		{
 			e->preci_size = -(i - 1);
