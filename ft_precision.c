@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 07:23:59 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/05 04:12:14 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/05 04:17:41 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int		ft_check_preci(char *str, t_env *e)
 		else
 			return (0);
 	}
-	printf("k = %i\n", k);
 	return (k);
 }
 
@@ -75,11 +74,9 @@ int		ft_precision(char *str, t_env *e)
 			if (k > 0)
 				i -= (k - 1);
 		}
-		printf("i = %i\n", i);
 		i--;
 	}
 	e->null = ft_zero(&str[i], e);
 	e->size_arg = -i + 1;
-	printf("e->size_arg = %i\n", e->size_arg);
 	return (-i);
 }
