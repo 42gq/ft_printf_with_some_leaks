@@ -6,13 +6,13 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 08:14:38 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/04 05:04:58 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/05 02:46:41 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_signs(char *str, t_env *e)
+void	ft_signs(char *str, t_env *e)
 {
 	int	i;
 
@@ -22,8 +22,6 @@ int		ft_signs(char *str, t_env *e)
 	{
 		if (str[i] == ' ')
 			e->space += 1;
-		if (str[i] == '0')
-			e->null = 1;
 		if (str[i] == '#')
 			e->diese += 1;
 		if (str[i] == '-')
@@ -32,5 +30,4 @@ int		ft_signs(char *str, t_env *e)
 			e->plus += 1;
 		i++;
 	}
-	return (i);
 }

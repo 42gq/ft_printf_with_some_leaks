@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/20 07:44:08 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/04 06:09:10 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/05 03:06:42 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_condition2(char *str, t_env *e)
 
 	i = (e->condi == '%') ? -1 : 0;
 	k = 0;
-	if ((e->size_num = ft_precision(str, e)) < 0)
+	if (ft_precision(str, e) < 0)
 		e->error = 1;
 	while (str[i] != '%' && !(ft_isdigit(str[i])))
 	{
@@ -63,11 +63,7 @@ void	ft_condition2(char *str, t_env *e)
 	}
 	while (str[i + k] != '%')
 		k--;
-	k = ft_signs(&str[i + k + 1], e);
-	if (e->null == 0 && e->size_num == 0)
-		k = 0;
-	i += (e->preci_size == 1) ? 1 : 0;
-	e->size_arg += (-i) + e->size_num + 1 + k;
+	ft_signs(&str[i + k + 1], e);
 }
 
 int		ft_condition(char *str, t_env *e, int check)

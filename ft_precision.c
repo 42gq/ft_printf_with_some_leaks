@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 07:23:59 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/04 02:05:34 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/05 04:12:14 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,20 @@ int		ft_options_field(char *str, int i, t_env *e)
 
 	k = 0;
 	if ((str[i] == '-' || str[i] == '+' || str[i] == ' ' || str[i] == '#'
-		|| str[i] == '%') && e->field == 0)
+		|| str[i] == '%') && e->field_size == 0)
 	{
-		e->field_size = -i;
-		e->field = ft_atoi(&str[i + 1]);
-		if (str[i + 1] == '0')
+		if (e->field == 0)
 		{
-			e->field_size -= 1;
-			k++;
+			e->field_size = -i;
+			e->field = ft_atoi(&str[i + 1]);
 		}
-		k += e->field_size;
+		if (e->field_size > 0 && e->field == 0)
+		{
+			e->field_size = 0;
+			return (0);
+		}
 	}
-	return (k);
+	return (-i);
 }
 
 int		ft_check_preci(char *str, t_env *e)
@@ -43,20 +45,17 @@ int		ft_check_preci(char *str, t_env *e)
 		i--;
 	if (!(k = ft_options_field(str, i, e)))
 	{
+
 		if ((str[i] == '.') && e->preci == 0)
 		{
 			e->preci_size = -(i - 1);
 			e->preci = ft_atoi(&str[i + 1]);
 			k = e->preci_size;
 		}
-			else if (str[i + 1] == '0')
-		{
-			k = 1;
-			e->null = 1;
-		}
 		else
-			return (-1);
+			return (0);
 	}
+	printf("k = %i\n", k);
 	return (k);
 }
 
@@ -76,7 +75,11 @@ int		ft_precision(char *str, t_env *e)
 			if (k > 0)
 				i -= (k - 1);
 		}
+		printf("i = %i\n", i);
 		i--;
 	}
-	return (e->preci_size + e->field_size + e->null);
+	e->null = ft_zero(&str[i], e);
+	e->size_arg = -i + 1;
+	printf("e->size_arg = %i\n", e->size_arg);
+	return (-i);
 }

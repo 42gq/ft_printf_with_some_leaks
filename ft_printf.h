@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 00:44:17 by gquerre           #+#    #+#             */
-/*   Updated: 2017/09/29 04:56:26 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/05 02:49:44 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct		s_env
 	int				size_w;
 }					t_env;
 
+int					ft_zero(char *str, t_env *e);
 char				*ft_strchar(char *s1, char c);
 char				*ft_apply_optionschar(char *str, t_env *e);
 int					ft_printf(const char *format, ...);
@@ -66,7 +67,7 @@ int					ft_checkway(char *str, t_env *e);
 int					ft_condition(char *str, t_env *e, int check);
 int					ft_somme_option(t_env *e);
 int					ft_precision(char *str, t_env *e);
-int					ft_signs(char *str, t_env *e);
+void				ft_signs(char *str, t_env *e);
 int					ft_save_arg(t_env *e, va_list arg);
 int					ft_percent(t_env *e);
 
