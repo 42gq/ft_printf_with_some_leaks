@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 07:23:59 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/05 04:17:41 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/05 04:56:04 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ int		ft_options_field(char *str, int i, t_env *e)
 			e->field_size = 0;
 			return (0);
 		}
+		return (-i);
 	}
-	return (-i);
+	return (0);
 }
 
 int		ft_check_preci(char *str, t_env *e)
