@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/20 07:44:08 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/05 06:01:05 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 04:15:48 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,6 @@ int		ft_condition(char *str, t_env *e, int check)
 			|| str[i] == 'x' || str[i] == 'X' || str[i] == 'u'
 			|| str[i] == 'U' || str[i] == 'c' || str[i] == 'C')
 	{
-		if (str[i] == '%')
-			e->condi = '%';
 		if (check == 1)
 		{
 			ft_condition2(str, e);
