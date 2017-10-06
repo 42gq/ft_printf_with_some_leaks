@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/20 02:44:18 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/06 07:40:53 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 07:49:16 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,10 @@ int		addon_read(t_env *e, char *tmp, int i, va_list arg)
 int		ft_read(const char *format, va_list arg, t_env *e)
 {
 	int		i;
-	int		l;
 	char	*tmp;
 
 	i = 0;
-	l = ft_strlen(format);
-	if (!(tmp = ft_strdup_until(format, l)))
+	if (!(tmp = ft_strdup_until(format, ft_strlen(format))))
 		return (ft_error_printf(1));
 	while (tmp[i] != '\0')
 	{
