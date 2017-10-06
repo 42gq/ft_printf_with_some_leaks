@@ -6,11 +6,23 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/27 04:04:49 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/06 01:51:10 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 03:08:38 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+
+int		ft_checkzero(char *str)
+{
+	int	k;
+
+	k = 0;
+	while (str[k] != '\0' && str[k] == '0')
+		k++;
+	if (k >= 2)
+		return (2);
+	return (0);
+}
 
 char	*ft_diese(char *str, t_env *e)
 {
@@ -20,24 +32,24 @@ char	*ft_diese(char *str, t_env *e)
 	i = 0;
 	add = NULL;
 	if ((e->condi != 'p' && ((!str || str[0] == '0') &&
-			(e->field != ft_strlen(str)))) || (!str))
+			(e->field != ft_strlen(str)))) && (!str))
 		return (str);
 	while (str[i] == ' ')
 		i++;
-	printf("str = %s\n", str);
+	if (i == 0 && e->preci != ft_strlen(str))
+		i = ft_checkzero(str);
 	if ((e->condi == 'o' || e->condi == 'O'))
 	{
 		if (str[i] != '0')
 			add = ft_insert(str, i, "0");
-		printf("strIF = %s\n", str);
 		return (add);	
 	}
+	else if ((e->condi == 'x' || e->condi == 'X') && (e->nbr == 0 || (e->preci_size && e->preci == 0)))
+		return (str);
 	else
 	{
-		printf("strELSE = %s\n", str);
 		add = ft_insert(str, i, "0x");
 		return (add);	
 	}
-	printf("strEND = %s\n", str);
 	return (str);	
 }
