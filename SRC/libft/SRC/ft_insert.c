@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 01:25:31 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/06 03:57:28 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 09:16:42 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char	*ft_insert(char *str, int i, char *addon)
 	int		u;
 	int		size;
 	char	*mem;
+
 	size = ft_strlen(addon);
 	u = ft_strlen(str) + size;
 	mem = NULL;

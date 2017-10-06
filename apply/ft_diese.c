@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/27 04:04:49 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/06 04:09:11 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 09:24:11 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,19 @@ char	*ft_diese(char *str, t_env *e)
 		return (str);
 	while (str[i] == ' ')
 		i++;
-	if (i == 0 && e->preci != ft_strlen(str) && e->condi != 'o' && e->condi != 'O')
+	if (i == 0 && e->preci != ft_strlen(str) &&
+			e->condi != 'o' && e->condi != 'O')
 		i = ft_checkzero(str);
 	if ((e->condi == 'o' || e->condi == 'O'))
 	{
 		if (str[i] != '0')
-		{
 			add = ft_insert(str, i, "0");
-		}
-		return (add);	
+		return (add);
 	}
-	else if ((e->condi == 'x' || e->condi == 'X') && (e->nbr == 0 || (e->preci_size && e->preci == 0)))
+	else if ((e->condi == 'x' || e->condi == 'X') &&
+			(e->nbr == 0 || (e->preci_size && e->preci == 0)))
 		return (str);
 	else
-	{
-		add = ft_insert(str, i, "0x");
-		return (add);	
-	}
-	return (str);	
+		return (ft_insert(str, i, "0x"));
+	return (str);
 }

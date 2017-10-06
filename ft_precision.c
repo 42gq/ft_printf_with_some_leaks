@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 07:23:59 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/06 07:18:25 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 09:30:47 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ int		ft_precision(char *str, t_env *e)
 	i = (e->condi == '%') ? -1 : 0;
 	while (str[i] != '%')
 	{
-		if ((str[i] >= '0' && str[i] <= '9') || (e->condi == '%') || (e->preci == 0 && str[i] == '.' && !ft_isdigit(str[i + 1])))
+		if ((str[i] >= '0' && str[i] <= '9') || (e->condi == '%') ||
+				(e->preci == 0 && str[i] == '.' && !ft_isdigit(str[i + 1])))
 		{
 			k = 0;
 			if ((k = ft_check_preci(&str[i], e)) < 0)

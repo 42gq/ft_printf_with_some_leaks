@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 00:44:17 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/05 02:49:44 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 09:19:10 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "./SRC/libft/SRC/libft.h"
-#include <stddef.h>
-#include <locale.h>
-#include <stdarg.h>
-#include "ft_printf.h"
+# include <stddef.h>
+# include <locale.h>
+# include <stdarg.h>
+# include "ft_printf.h"
 
 int					main();
 
@@ -31,7 +31,7 @@ typedef struct		s_env
 	long long int	nbrs;
 	uintmax_t		nbr;
 	char			*stock;
-	int				error;	
+	int				error;
 	char			condi;
 	int				space;
 	int				diese;
@@ -70,9 +70,6 @@ int					ft_precision(char *str, t_env *e);
 void				ft_signs(char *str, t_env *e);
 int					ft_save_arg(t_env *e, va_list arg);
 int					ft_percent(t_env *e);
-
-				/*HANDLERS*/
-
 int					ft_handle_char(char v_arg, t_env *e);
 int					ft_handle_int(t_env *e);
 int					ft_handle_ssint(t_env *e);
@@ -90,9 +87,6 @@ int					ft_handle_wstring(wchar_t *v_arg, t_env *e);
 int					ft_handle_llunt(t_env *e);
 int					ft_handle_lunt(t_env *e);
 int					ft_handle_unt(t_env *e);
-
-				/*ADDONS*/
-
 char				*ft_apply_options(char *str, t_env *e);
 char				*ft_signs_pass(char *str, t_env *e);
 char				*ft_apply_preci(char *str, t_env *e);
