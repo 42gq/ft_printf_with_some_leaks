@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/20 07:44:08 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/06 04:23:54 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 07:17:06 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,7 @@ void	ft_condition2(char *str, t_env *e)
 	int i;
 	int	k;
 
-	i = (e->condi == '%') ? -1 : 0;
-	k = 0;
+	i =/* (e->condi == '%') ? -1 : */0;
 	if (ft_precision(&str[i], e) < 0)
 		e->error = 1;
 	while (str[i] != '%' && !(ft_isdigit(str[i])))
@@ -61,6 +60,7 @@ void	ft_condition2(char *str, t_env *e)
 			e->l = ft_doub(&str[i], str[i], e);
 		i--;
 	}
+	k = (e->condi == '%' && str[i] == '%') ? -1 : 0;
 	while (str[i + k] != '%')
 		k--;
 	ft_signs(&str[i + k + 1], e);
@@ -78,14 +78,16 @@ int		ft_condition(char *str, t_env *e, int check)
 			|| str[i] == 'x' || str[i] == 'X' || str[i] == 'u'
 			|| str[i] == 'U' || str[i] == 'c' || str[i] == 'C')
 	{
+		e->condi = str[i];
 		if (check == 1)
 		{
 			ft_condition2(str, e);
 			if (e->h < 0 || e->l < 0)
 				return (-4);
 			if (e->size_arg - ft_somme_option(e) != 0)
+			{
 				return (-6);
-
+			}
 		}
 		return (1);
 	}
