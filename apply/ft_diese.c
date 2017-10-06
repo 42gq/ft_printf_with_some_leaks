@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/27 04:04:49 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/06 03:59:50 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 04:00:51 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_diese(char *str, t_env *e)
 		i = ft_checkzero(str);
 	if ((e->condi == 'o' || e->condi == 'O'))
 	{
-		if (str[i] != '0' && str[i + 1] != '\0')
+		if (str[i] != '0' || !str)
 		{
 			add = ft_insert(str, i, "0");
 		}
