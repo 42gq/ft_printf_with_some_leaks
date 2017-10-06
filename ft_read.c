@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/20 02:44:18 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/06 07:49:16 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 07:58:46 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		ft_read(const char *format, va_list arg, t_env *e)
 	int		i;
 	char	*tmp;
 
+	ft_strclr(e->stock);
 	i = 0;
 	if (!(tmp = ft_strdup_until(format, ft_strlen(format))))
 		return (ft_error_printf(1));
