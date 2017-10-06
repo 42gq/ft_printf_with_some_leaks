@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/27 04:04:49 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/05 07:46:36 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 01:51:10 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,20 @@ char	*ft_diese(char *str, t_env *e)
 		return (str);
 	while (str[i] == ' ')
 		i++;
+	printf("str = %s\n", str);
 	if ((e->condi == 'o' || e->condi == 'O'))
 	{
 		if (str[i] != '0')
 			add = ft_insert(str, i, "0");
+		printf("strIF = %s\n", str);
 		return (add);	
 	}
 	else
 	{
-			add = ft_insert(str, i, "0x");
+		printf("strELSE = %s\n", str);
+		add = ft_insert(str, i, "0x");
 		return (add);	
 	}
+	printf("strEND = %s\n", str);
 	return (str);	
 }

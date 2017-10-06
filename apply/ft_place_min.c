@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 03:04:05 by gquerre           #+#    #+#             */
-/*   Updated: 2017/09/19 05:03:55 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 00:38:49 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	*ft_minus(char *str, t_env *e)
 		check = (str[i++] == '-') ? 1 : 0;
 	if (check == 1)
 	{
-		str[i - 1] = ' ';
+		str[i - 1] = (e->field == e->preci + 1 && e->field == j) ? '0' : ' ';
 		i = 0;
 		while (str[i] != '\0' && str[i] == ' ')
 			i++;
