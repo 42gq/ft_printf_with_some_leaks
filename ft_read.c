@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/20 02:44:18 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/06 07:17:32 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 07:40:53 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int		ft_read(const char *format, va_list arg, t_env *e)
 	int		l;
 	char	*tmp;
 
-	ft_strclr(e->stock);
 	i = 0;
 	l = ft_strlen(format);
 	if (!(tmp = ft_strdup_until(format, l)))
@@ -45,7 +44,7 @@ int		ft_read(const char *format, va_list arg, t_env *e)
 			break ;
 		i = addon_read(e, tmp, i, arg);
 		if (i > 1 && (e->stock[e->size - 1] == '\0' && e->condi == 'c' && (e->field > 0 || e->preci > 0)))
-			break;
+			break ;
 		if (i < 0 || (e->error != 0))
 			return (ft_error_printf(e->error));
 	}
