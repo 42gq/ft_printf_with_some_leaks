@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 07:23:59 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/05 06:06:09 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 04:30:54 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,6 @@ int		ft_precision(char *str, t_env *e)
 		i--;
 	}
 	e->null = ft_zero(&str[i], e);
-	e->size_arg = -i + 1;
+	e->size_arg = (e->condi == '%') ? -i : -i + 1;
 	return (-i);
 }
