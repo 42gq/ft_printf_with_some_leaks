@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/27 04:04:49 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/06 03:20:39 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 03:55:57 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,12 @@ char	*ft_diese(char *str, t_env *e)
 		i = ft_checkzero(str);
 	if ((e->condi == 'o' || e->condi == 'O'))
 	{
+		printf("yolo\n");
 		if (str[i] != '0')
+		{
 			add = ft_insert(str, i, "0");
+			printf("yoloIF\n");
+		}
 		return (add);	
 	}
 	else if ((e->condi == 'x' || e->condi == 'X') && (e->nbr == 0 || (e->preci_size && e->preci == 0)))

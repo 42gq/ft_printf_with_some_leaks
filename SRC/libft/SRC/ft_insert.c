@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/29 01:25:31 by gquerre           #+#    #+#             */
-/*   Updated: 2017/09/29 02:25:49 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/06 03:57:28 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ char	*ft_insert(char *str, int i, char *addon)
 	}
 	else
 	{
-	mem = ft_strcpy_until(str, i - size);
-	mem = ft_strjoinfree(mem, addon);
-	mem = ft_strjoin(mem, &str[i]);
+		mem = ft_strcpy_until(str, i - size);
+		mem = ft_strjoinfree(mem, addon);
+		mem = ft_strjoin(mem, &str[i]);
 	}
 	ft_strdel(&str);
 	return (mem);
