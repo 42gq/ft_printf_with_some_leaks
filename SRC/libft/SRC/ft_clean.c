@@ -1,36 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_clean.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/20 05:27:56 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/09 04:07:59 by gquerre          ###   ########.fr       */
+/*   Created: 2017/10/09 07:09:12 by gquerre           #+#    #+#             */
+/*   Updated: 2017/10/09 07:10:11 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf(const char *format, ...)
+void	ft_clean(char *str)
 {
-	va_list arg;
-	int		res;
-	t_env	*e;
-
-	if (!(e = ft_memalloc(sizeof(t_env))))
-		return (-1);
-	e->size = 0;
-	e->cheat_size = 0;
-	e->cheat = NULL;
-	if (e->stock)
-		ft_strclr(e->stock);
-	e->stock = ft_strnew(1);
-	ft_init_arg(e);
-	va_start(arg, format);
-	res = ft_read(format, arg, e);
-	ft_strdel(&e->stock);
-	free(e);
-	va_end(arg);
-	return (res);
+	ft_strclr(str);
+	ft_strdel(&str);
 }

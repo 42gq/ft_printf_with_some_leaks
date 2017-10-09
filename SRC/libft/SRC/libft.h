@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 19:35:19 by gquerre           #+#    #+#             */
-/*   Updated: 2017/09/29 02:17:41 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/09 07:12:29 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdlib.h>
 # include "./files.h/get_next_line.h"
 
+void				ft_clean(char *str);
 char				*ft_insert(char *str, int i, char *addon);
 char				*ft_capitalize(char *str);
 char				*ft_replace_char(char *str, int i, char c);

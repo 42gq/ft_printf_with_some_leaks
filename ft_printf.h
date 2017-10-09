@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 00:44:17 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/06 09:19:10 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/09 06:40:33 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,12 @@ typedef struct		s_env
 	char			*tmp;
 	int				size;
 	int				size_w;
+	int				*cheat;
+	int				cheat_size;
+	int				add_size;
 }					t_env;
 
+void				ft_cheat(t_env *e, int k, int p);
 int					ft_zero(char *str, t_env *e);
 char				*ft_strchar(char *s1, char c);
 char				*ft_apply_optionschar(char *str, t_env *e);
