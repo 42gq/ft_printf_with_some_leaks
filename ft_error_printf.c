@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/03 05:21:12 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/06 08:46:58 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/09 07:43:04 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ void	ft_write_error(int i)
 
 int		ft_error_printf(int i)
 {
-	ft_write_error(i);
+//	ft_write_error(i);
 	return (-1);
 }
