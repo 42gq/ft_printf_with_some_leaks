@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/20 02:44:18 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/09 07:08:17 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/09 08:02:15 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int		ft_read(const char *format, va_list arg, t_env *e)
 		i += ft_strchr_count(&tmp[i], '%');
 		if (tmp[i] == '\0')
 			break ;
-		i = addon_read(e, tmp, i, arg);
+		if (!(i = addon_read(e, tmp, i, arg)))
+			return (-1);
 		if (i < 0 || (e->error != 0))
 			return (ft_error_printf(e->error));
 	}
