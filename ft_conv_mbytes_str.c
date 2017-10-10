@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/29 05:00:18 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/10 01:17:56 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/10 04:30:29 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*ft_split_mbytes(t_env *e, int i)
 
 	str = NULL;
 	if (i < 8)
-	str = ft_mask(1, e);
+		str = ft_mask(1, e);
 	else if (i < 12)
 		str = ft_mask(2, e);
 	else if (i < 18)

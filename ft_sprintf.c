@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_sprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/20 05:27:56 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/10 01:59:43 by gquerre          ###   ########.fr       */
+/*   Created: 2017/10/10 01:42:10 by gquerre           #+#    #+#             */
+/*   Updated: 2017/10/10 03:58:53 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_sprintf(char **cpy, const char *format, ...)
 {
 	va_list arg;
 	int		res;
@@ -29,7 +29,7 @@ int	ft_printf(const char *format, ...)
 	ft_init_arg(e);
 	va_start(arg, format);
 	res = ft_read(format, arg, e);
-	write(1, e->stock, e->size);
+	*cpy = ft_strdup(e->stock);
 	ft_strdel(&e->stock);
 	free(e);
 	va_end(arg);
