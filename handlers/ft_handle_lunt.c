@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/22 01:57:42 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/04 04:27:28 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/10 05:28:41 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_stocklutoa(unsigned long int a, t_env *e)
 		base = 8;
 	else if (e->condi == 'x' || e->condi == 'X' || e->condi == 'p')
 		base = 16;
+	else if (e->condi == 'b')
+		base = 2;
 	else
 		base = 10;
 	str = ft_lutoa(a, base);

@@ -6,7 +6,7 @@
 /*   By: gquerre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 00:44:17 by gquerre           #+#    #+#             */
-/*   Updated: 2017/10/10 03:44:53 by gquerre          ###   ########.fr       */
+/*   Updated: 2017/10/10 04:54:14 by gquerre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct		s_env
 }					t_env;
 
 int					ft_sprintf(char **cpy, const char *format, ...);
+int					ft_dprintf(int fd, const char *format, ...);
 void				ft_cheat(t_env *e, int k, int p);
 int					ft_zero(char *str, t_env *e);
 char				*ft_strchar(char *s1, char c);
